@@ -1,0 +1,31 @@
+{
+    "name": "avido/package-generator",
+    "type": "project",
+    "description": "Generate Skeleton for Concord Module/Package",
+    "version": "1.0.0",
+    "keywords": ["skeleton", "concord", "php"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sebastiaan Blaas",
+            "email": "sebastiaan@avido.nl"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Avido\\PackageGenerator\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Avido\\PackageGenerator\\Providers\\PackageGeneratorServiceProvider"
+            ],
+            "aliases": {}
+        }
+    }
+}

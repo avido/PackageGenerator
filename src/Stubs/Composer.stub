@@ -1,0 +1,19 @@
+{
+    "name": "module/$NAME$",
+    "description": "",
+    "version": "$VERSION$",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "$NAMESPACE$": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "$NAMESPACE$Providers\\$CLASSNAME$ServiceProvider"
+            ],
+            "aliases": {}
+        }
+    }
+}
