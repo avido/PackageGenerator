@@ -18,4 +18,6 @@ php artisan vendor:publish --provider="Konekt\Concord\ConcordServiceProvider" --
 php artisan module:make
 
 follow instructions
+
+# Don't forget to register the Module in config/concord.php
 ```
