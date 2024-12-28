@@ -109,7 +109,7 @@ class PackageGenerator
         if (!$repositoryExists) {
             $composerJson['repositories'][] = [
                 "type" => "path",
-                "url" => "App/Modules/{$this->packageName}"
+                "url" => "App/Modules/*"
             ];
         }
 
