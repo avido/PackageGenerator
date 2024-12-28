@@ -100,7 +100,7 @@ class PackageGenerator
         $repositoryExists = false;
 
         foreach ($composerJson['repositories'] as $repository) {
-            if (isset($repository['url']) && $repository['url'] === "App/Modules/{$this->packageName}") {
+            if (isset($repository['url']) && $repository['url'] === "App/Modules/*") {
                 $repositoryExists = true;
                 break;
             }
