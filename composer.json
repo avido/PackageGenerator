@@ -2,7 +2,7 @@
     "name": "avido/package-generator",
     "type": "project",
     "description": "Generate Skeleton for Concord Module/Package",
-    "version": "1.0.0",
+    "version": "1.2.0",
     "keywords": ["skeleton", "concord", "php"],
     "license": "MIT",
     "authors": [
