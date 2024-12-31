@@ -142,7 +142,7 @@ class PackageGenerator
     {
         $this->console->info("Create folder structure");
         foreach ($this->configuration->getFolders() as $key => $folder) {
-            $path = base_path("App/Modules/{$this->packageName}/src/{$folder}");
+            $path = base_path("App/Modules/{$this->packageName}/{$folder}");
             if ($this->filesystem->isDirectory($path)) {
                 $this->console->error("{$path} bestaat reeds, skipping..");
             }
