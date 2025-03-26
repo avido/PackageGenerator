@@ -9,8 +9,8 @@ use Illuminate\Console\Command;
 
 class InstallModule extends Command
 {
-    protected string $signature = 'package:install {module?}';
-    protected string $description = 'Run module install';
+    protected $signature = 'package:install {module?}';
+    protected $description = 'Run module install';
 
     public function handle()
     {
@@ -25,21 +25,20 @@ class InstallModule extends Command
         }
     }
 
-    protected function installModule(string $module)
+    protected function installModule(string $module): void
     {
         $installer = ModuleInstallerRegistry::getInstaller($module);
 
         if (!$installer) {
             $this->error("No installer found for: '{$module}'.");
-            return;
-        }
-
-        $this->info("Installing module '{$module}'...");
-        if ($installer instanceof \Closure) {
-            $installer();
         } else {
-            $installer->install();
+            $this->info("Installing module '{$module}'...");
+            if ($installer instanceof \Closure) {
+                $installer();
+            } else {
+                $installer->install();
+            }
+            $this->info("Module '{$module}' successfully installed.");
         }
-        $this->info("Module '{$module}' successfully installed.");
     }
 }
