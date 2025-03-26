@@ -2,6 +2,7 @@
 
 namespace Avido\PackageGenerator\Providers;
 
+use Avido\PackageGenerator\Console\Command\InstallModule;
 use Avido\PackageGenerator\Console\Command\MakeModuleServiceProviderCommand;
 use Avido\PackageGenerator\Console\Command\MakePackageCommand;
 use Avido\PackageGenerator\Console\Command\MakeServiceProviderCommand;
@@ -37,6 +38,7 @@ class PackageGeneratorServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
+                InstallModule::class,
                 MakePackageCommand::class,
                 MakeServiceProviderCommand::class,
                 MakeModuleServiceProviderCommand::class,

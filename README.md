@@ -15,9 +15,20 @@ php artisan vendor:publish --provider="Konekt\Concord\ConcordServiceProvider" --
 ## CLI Command
 
 ```php
-php artisan module:make
+php artisan package:make
 
 follow instructions
 
 # Don't forget to register the Module in config/concord.php
+```
+
+## Register installer 
+```php
+ModuleInstallerRegistry::register($moduleName, function() {
+    // closure
+});
+
+ModuleInstallerRegistry::register($moduleName, MyInstaller::class);
+
+php artisan package:install $moduleName
 ```
