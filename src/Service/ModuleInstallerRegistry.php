@@ -16,7 +16,7 @@ class ModuleInstallerRegistry
         if ($installer instanceof \Closure) {
             self::$installers[$module] = $installer;
         } elseif (is_string($installer) && class_exists($installer) && is_subclass_of($installer, ModuleInstaller::class)) {
-            self::$installers[$module] = $installer;
+            self::$installers[$module] = app()->make($installer);
         } else {
             throw new \Exception("Installer class {$installer} not found.");
         }
